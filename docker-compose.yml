@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  app:
+    build: ./nginx
+    restart: always
+    network_mode: "host"
+    volumes:
+      - ./letsencrypt:/etc/letsencrypt
