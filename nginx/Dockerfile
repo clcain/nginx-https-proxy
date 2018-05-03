@@ -1,8 +1,6 @@
-from debian:stretch
+from debian:stretch-slim
 
-RUN apt-get update && apt-get install nginx -y
-RUN apt-get update && apt-get install curl vim -y
-RUN apt-get update && apt-get install certbot -y
+RUN apt-get update && apt-get install -y certbot curl nginx && apt-get clean
 
 COPY sites-enabled/* /etc/nginx/sites-enabled/
 COPY nginx.conf /etc/nginx/
