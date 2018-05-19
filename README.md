@@ -21,3 +21,10 @@ docker exec -ti nginxhttpsproxy_app_1 certbot certonly --webroot -w /var/www/let
 You will want to obtain the certificate from Let's Encrypt using the command above before adding your site's configuration.
 
 To set up the HTTPS reverse proxy for your site, copy the [example configuration file](nginx-proxy/sites/enabled/.example.com) from `nginx-proxy/sites/enabled` to a new file in the same directory. Edit the certificate location to match your domain name.
+
+## Notes
+
+If you want to generate your own SSL key for testing, you can do so with OpenSSL. You must rename the files accordingly.
+```
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes -subj '/CN=example.com'
+```
