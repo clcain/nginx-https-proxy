@@ -10,4 +10,4 @@ RUN mkdir /var/www/letsencrypt
 COPY cron.d/certbot /etc/cron.d/certbot
 RUN chmod 0644 /etc/cron.d/certbot
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD bash -c "service cron start && nginx -g 'daemon off;'"

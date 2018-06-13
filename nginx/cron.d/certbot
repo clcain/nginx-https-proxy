@@ -1,1 +1,1 @@
-0 0 1 * * root /usr/bin/certbot renew
+0 0 * * * root /usr/bin/certbot renew >> /certbot.log
