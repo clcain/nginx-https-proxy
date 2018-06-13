@@ -7,11 +7,7 @@ COPY nginx.conf /etc/nginx/
 
 RUN mkdir /var/www/letsencrypt
 
-COPY letsencrypt.sh /
-COPY domains.txt /
-RUN chmod +x /letsencrypt.sh
-
-COPY cron.d/letsencrypt /etc/cron.d/letsencrypt
-RUN chmod 0644 /etc/cron.d/letsencrypt
+COPY cron.d/certbot /etc/cron.d/certbot
+RUN chmod 0644 /etc/cron.d/certbot
 
 CMD ["nginx", "-g", "daemon off;"]
