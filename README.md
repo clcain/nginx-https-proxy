@@ -13,7 +13,7 @@ certbot certonly --webroot -w /var/www/letsencrypt/ -d example.com
 
 This command may be run on the host machine through `docker exec` as follows:
 ```
-docker exec -ti nginxhttpsproxy_app_1 certbot certonly --webroot -w /var/www/letsencrypt/ -d example.com
+docker exec -ti nginx-https-proxy_app_1 certbot certonly --webroot -w /var/www/letsencrypt/ -d example.com
 ```
 
 ## Configuration
@@ -27,7 +27,7 @@ To set up the HTTPS reverse proxy for your site, copy the [example configuration
 You may want to schedule a restart of the nginx container periodically (once per month is recommended) so that nginx will load the lastest certificates. You can use cron to schedule a job like the following:
 
 ```
-0 0 1 * * docker restart nginxhttpsproxy_app_1
+0 0 1 * * docker restart nginx-https-proxy_app_1
 ```
 
 ## Notes
