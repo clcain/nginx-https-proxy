@@ -22,6 +22,14 @@ You will want to obtain the certificate from Let's Encrypt using the command abo
 
 To set up the HTTPS reverse proxy for your site, copy the [example configuration file](nginx-proxy/sites/enabled/.example.com) from `nginx-proxy/sites/enabled` to a new file in the same directory. Edit the certificate location to match your domain name.
 
+## Scheduled restarts
+
+You may want to schedule a restart of the nginx container periodically (once per month is recommended) so that nginx will load the lastest certificates. You can use cron to schedule a job like the following:
+
+```
+0 0 1 * * docker restart nginxhttpsproxy_app_1
+```
+
 ## Notes
 
 If you want to generate your own SSL key for testing, you can do so with OpenSSL. You must rename the files accordingly.
