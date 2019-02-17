@@ -1,4 +1,4 @@
-from debian:stretch-slim
+FROM debian:stretch-slim
 
 RUN apt-get update && apt-get install -y certbot cron curl nginx && apt-get clean
 
