@@ -10,7 +10,7 @@ To start using this software, clone this repository and then run `docker-compose
 
 You will want to obtain the certificate from Let's Encrypt using the command above before adding your site's configuration.
 
-To set up the HTTPS reverse proxy for your site, copy the [example configuration file](nginx-proxy/sites/enabled/.example.com) from `nginx-proxy/sites/enabled` to a new file in the same directory. Edit the certificate location to match your domain name.
+To set up the HTTPS reverse proxy for your site, copy the [example configuration file](nginx-proxy/sites-enabled/.example.com) from `nginx-proxy/sites/enabled` to a new file in the same directory. Edit the certificate location to match your domain name.
 
 ## Obtaining new certificates from Let's Encrypt
 ```
