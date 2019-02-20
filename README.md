@@ -4,7 +4,7 @@ This software is an nginx HTTPS reverse proxy with support for Let's Encrypt. It
 
 ## Installation
 
-To start using this software, clone this repository and then run `docker-compose up`. Then, follow the instructions in the next two sections to get an HTTPS certificate set up and to configure the redirect for your domain. You must have Docker and docker-compose installed.
+To start using this software, clone this repository and then run `docker-compose up`. Then, follow the instructions in the next two sections to get an HTTPS certificate set up and to configure the redirect for your domain. You must have Docker installed to run the container, and you must haveand docker-compose installed to use the helper script.
 
 ## Obtaining new certificates from Let's Encrypt
 ```
