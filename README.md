@@ -6,12 +6,6 @@ This software is an nginx HTTPS reverse proxy with support for Let's Encrypt. It
 
 To start using this software, clone this repository and then run `docker-compose up`. Then, follow the instructions in the next two sections to get an HTTPS certificate set up and to configure the redirect for your domain. You must have Docker and docker-compose installed.
 
-## Configuration
-
-You will want to obtain the certificate from Let's Encrypt using the command above before adding your site's configuration.
-
-To set up the HTTPS reverse proxy for your site, copy the [example configuration file](nginx-proxy/sites-enabled/.example.com) from `nginx-proxy/sites/enabled` to a new file in the same directory. Edit the certificate location to match your domain name.
-
 ## Obtaining new certificates from Let's Encrypt
 ```
 certbot certonly --webroot -w /var/www/letsencrypt/ -d example.com
@@ -27,9 +21,11 @@ The helper script `gen-cert.sh` will run the above command inside the nginx Dock
 bash gen-cert.sh [domain name]
 ```
 
-## Creating a site configuration
+## Configuration
 
-In `ngxin/sites-enabled`, copy `.example.com` into a new file, named to match the domain you would like to serve. Modify the contents of the example file to fit your domain.
+You will want to obtain the certificate from Let's Encrypt using the command above before adding your site's configuration.
+
+To set up the HTTPS reverse proxy for your site, copy the [example configuration file](nginx-proxy/sites-enabled/.example.com) from `nginx-proxy/sites/enabled` to a new file in the same directory. Edit the certificate location to match your domain name.
 
 ## Launching the service
 
