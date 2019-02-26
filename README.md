@@ -1,4 +1,5 @@
-# nginx-https-proxy
+# 
+https-proxy
 
 This software is an nginx HTTPS reverse proxy with support for Let's Encrypt. It may be deployed using Docker. It is a container that has nginx and the Let's Encrypt certbot installed. It may be used to automatically obtain an HTTPS certificate from Let's Encrypt, then act as a reverse proxy for upgrading an HTTP service to HTTPS.
 
@@ -25,7 +26,7 @@ bash gen-cert.sh [domain name]
 
 You will want to obtain the certificate from Let's Encrypt using the command above before adding your site's configuration.
 
-To set up the HTTPS reverse proxy for your site, copy the [example configuration file](nginx-proxy/sites-enabled/.example.com) from `nginx-proxy/sites-enabled` to a new file in the same directory. Edit the certificate location to match your domain name.
+To set up the HTTPS reverse proxy for your site, copy the [example configuration file](nginx/sites-enabled/.example.com) from `nginx/sites-enabled` to a new file in the same directory. Edit the certificate location to match your domain name.
 
 ## Launching the service
 
