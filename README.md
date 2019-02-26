@@ -1,5 +1,4 @@
-# 
-https-proxy
+# nginx-https-proxy
 
 This software is an nginx HTTPS reverse proxy with support for Let's Encrypt. It may be deployed using Docker. It is a container that has nginx and the Let's Encrypt certbot installed. It may be used to automatically obtain an HTTPS certificate from Let's Encrypt, then act as a reverse proxy for upgrading an HTTP service to HTTPS.
 
