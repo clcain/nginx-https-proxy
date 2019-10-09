@@ -8,7 +8,7 @@ To start using this software, clone this repository and then run `docker-compose
 
 ## Obtaining new certificates from Let's Encrypt
 ```
-certbot --nginx -d example.com
+certbot --nginx --no-redirect -d example.com
 ```
 
 The helper script `gen-cert.sh` will run the above command inside the nginx Docker container for you.
