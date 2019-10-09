@@ -8,12 +8,7 @@ To start using this software, clone this repository and then run `docker-compose
 
 ## Obtaining new certificates from Let's Encrypt
 ```
-certbot certonly --webroot -w /var/www/letsencrypt/ -d example.com
-```
-
-This command may be run on the host machine through `docker exec` as follows:
-```
-docker exec -ti nginx-https-proxy_app_1 certbot certonly --webroot -w /var/www/letsencrypt/ -d example.com
+certbot --nginx -d example.com
 ```
 
 The helper script `gen-cert.sh` will run the above command inside the nginx Docker container for you.
@@ -34,6 +29,7 @@ Running the service is as easy as `docker-compose up` (or `docker-compose up --b
 ## Notes
 
 If you want to generate your own SSL key for testing, you can do so with OpenSSL. You must rename the files accordingly.
+
 ```
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes -subj '/CN=example.com'
 ```
