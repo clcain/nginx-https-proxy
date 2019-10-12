@@ -24,7 +24,7 @@ To set up the HTTPS reverse proxy for your site, copy the [example configuration
 
 ## Launching the service
 
-Running the service is as easy as `docker-compose up` (or `docker-compose up --build` if you recently changed the `sites-enabled` directory. You may also run `bash start.sh` to start the service for you.
+Running the service is as easy as `docker-compose up` (or `docker-compose up --build` if you recently changed the `sites-enabled` directory). You may also run `bash start.sh` to start the service for you.
 
 ## Self signed certificates
 
