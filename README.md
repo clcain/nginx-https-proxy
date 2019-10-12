@@ -26,10 +26,10 @@ To set up the HTTPS reverse proxy for your site, copy the [example configuration
 
 Running the service is as easy as `docker-compose up` (or `docker-compose up --build` if you recently changed the `sites-enabled` directory. You may also run `bash start.sh` to start the service for you.
 
-## Notes
+## Self signed certificates
 
-If you want to generate your own SSL key for testing, you can do so with OpenSSL. You must rename the files accordingly.
+If you want to generate a self signed certficate, you can use the `gen-self-signed-cert.sh` script to do so using OpenSSL. OpenSSL must be installed for this script to work.
 
 ```
-openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes -subj '/CN=example.com'
+bash gen-self-signed-cert.sh [domain name]
 ```
