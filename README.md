@@ -10,7 +10,7 @@ Clone this repository and run `./start.sh`.
 
 ## Let's Encrypt
 
-Once the Docker container is running, you can use the helper script to automatically generate a Let's Encrypt certificate for your domain.
+Once the Docker container is running, use the helper script to automatically generate a Let's Encrypt certificate for your domain.
 
 Ensure that your domain name is set up to resolve to this machine's IP address. Let's Encrypt will attempt to connect to your domain using HTTP and must be able to connect to the Docker container running on this machine.
 
@@ -20,7 +20,7 @@ Ensure that your domain name is set up to resolve to this machine's IP address. 
 
 ## Self signed certificates
 
-If you want to use a self signed certficate instead of Let's Encrypt, you can use `./gen-self-signed-cert.sh` to generate one.
+If you want to use a self signed certficate instead of Let's Encrypt, use `./gen-self-signed-cert.sh` to generate one.
 
 ```
 ./gen-self-signed-cert.sh [domain name]
