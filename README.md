@@ -1,35 +1,33 @@
 # nginx-https-proxy
 
-This software is an nginx HTTPS reverse proxy with support for Let's Encrypt. It may be deployed using Docker. It is a container that has nginx and the Let's Encrypt certbot installed. It may be used to automatically obtain an HTTPS certificate from Let's Encrypt, then act as a reverse proxy for upgrading an HTTP service to HTTPS.
+Easily secure your local HTTP applications with HTTPS using this nginx configuration that is easily deployed with Docker. Supports automatic certificate generation from Let's Encrypt.
+
+Must have Docker, docker-compose, and OpenSSL installed to use.
 
 ## Installation
 
-To start using this software, clone this repository and then run `docker-compose up`. Then, follow the instructions in the next two sections to get an HTTPS certificate set up and to configure the redirect for your domain. You must have Docker installed to run the container, and you must haveand docker-compose installed to use the helper script.
+Clone this repository and run `./start.sh`.
 
-## Obtaining new certificates from Let's Encrypt
+## Let's Encrypt
+
+Once the Docker container is running, you can use the helper script to automatically generate a Let's Encrypt certificate for your domain.
+
+Ensure that your domain name is set up to resolve to this machine's IP address. Let's Encrypt will attempt to connect to your domain using HTTP and must be able to connect to the Docker container running on this machine.
+
 ```
-certbot --nginx --no-redirect -d example.com
+./gen-cert.sh [your domain name]
 ```
-
-The helper script `gen-cert.sh` will run the above command inside the nginx Docker container for you.
-```
-bash gen-cert.sh [domain name]
-```
-
-## Configuration
-
-You will want to obtain the certificate from Let's Encrypt using the command above before adding your site's configuration.
-
-To set up the HTTPS reverse proxy for your site, copy the [example configuration file](nginx/sites-enabled/.example.com) from `nginx/sites-enabled` to a new file in the same directory. Edit the certificate location to match your domain name.
-
-## Launching the service
-
-Running the service is as easy as `docker-compose up` (or `docker-compose up --build` if you recently changed the `sites-enabled` directory). You may also run `bash start.sh` to start the service for you.
 
 ## Self signed certificates
 
-If you want to generate a self signed certficate, you can use the `gen-self-signed-cert.sh` script to do so using OpenSSL. OpenSSL must be installed for this script to work.
+If you want to use a self signed certficate instead of Let's Encrypt, you can use `./gen-self-signed-cert.sh` to generate one.
 
 ```
-bash gen-self-signed-cert.sh [domain name]
+./gen-self-signed-cert.sh [domain name]
 ```
+
+## Proxy configuration
+
+Ensure that you have followed the instructions above for each domain that you want to secure with HTTPS before continuing. The certificate files should appear in `./letsencrypt/live/`.
+
+For each site that you want to secure with HTTPS, copy the [example configuration file](sites-enabled/.example.com.conf) from `sites-enabled` to a new file in the same directory. Edit the certificate location to match your domain name. Then, run `docker-compose restart`.
