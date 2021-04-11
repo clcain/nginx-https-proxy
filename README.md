@@ -1,6 +1,6 @@
 # nginx-https-proxy
 
-Easily secure multiple local HTTP applications with HTTPS using this nginx configuration that is easily deployed with Docker. Supports automatic certificate generation from Let's Encrypt.
+Easily secure multiple local HTTP applications with HTTPS using this nginx configuration that can be deployed using Docker. Supports automatic certificate generation from Let's Encrypt.
 
 Must have Docker and docker-compose installed to use.
 
