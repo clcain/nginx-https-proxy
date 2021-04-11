@@ -10,7 +10,7 @@ Clone this repository and run `./start.sh`.
 
 ## Let's Encrypt
 
-Once the Docker container is running, use the helper script to automatically generate a Let's Encrypt certificate for your domain.
+Once the Docker container is running, use the helper script to automatically obtain a Let's Encrypt certificate for your domain.
 
 Ensure that your domain name is set up to resolve to this machine's IP address. Let's Encrypt will attempt to connect to your domain using HTTP and must be able to connect to the Docker container running on this machine.
 
@@ -20,14 +20,14 @@ Ensure that your domain name is set up to resolve to this machine's IP address. 
 
 ## Self signed certificates
 
-If you want to use a self signed certficate instead of Let's Encrypt, use `./gen-self-signed-cert.sh` to generate one.
+You may also use a self signed certficate instead of obtaining one from Let's Encrypt.
 
 ```
-./gen-self-signed-cert.sh [domain name]
+./gen-self-signed-cert.sh [your domain name]
 ```
 
 ## Proxy configuration
 
 Ensure that you have followed the instructions above for each domain that you want to secure with HTTPS before continuing. The certificate files should appear in `./letsencrypt/live/`.
 
-For each site that you want to secure with HTTPS, copy the [example configuration file](sites-enabled/.example.com.conf) from `sites-enabled` to a new file in the same directory. Edit the certificate location to match your domain name. Then, run `docker-compose restart`.
+For each site that you want to secure with HTTPS, copy the [example configuration file](sites-enabled/.example.com.conf) from `sites-enabled` to a new file in the same directory. Edit the certificate location to match your domain name and local port number. Then, run `docker-compose restart`.
