@@ -6,4 +6,4 @@ then
     exit 1
 fi
 
-docker exec -ti nginx-https-proxy_app_1 certbot --nginx --no-redirect -d $1
+docker exec -ti nginx-https-proxy_app_1 certbot certonly --nginx --no-redirect -d $1
