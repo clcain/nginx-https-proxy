@@ -8,11 +8,11 @@ logs:
 	docker-compose logs -f
 
 shell:
-	docker exec -ti nginx-https-proxy-nginx-1 bash
+	docker exec -ti nginx-https-proxy bash
 
 cert: up
 	@if [ -z "$$domain" ]; then echo "Usage: make cert domain=[your domain name]"; exit 1; fi
-	docker exec -ti nginx-https-proxy-nginx-1 certbot certonly --nginx --no-redirect -d $$domain
+	docker exec -ti nginx-https-proxy certbot certonly --nginx --no-redirect -d $$domain
 
 self-signed-cert:
 	@if [ -z "$$domain" ]; then echo "Usage: make self-signed-cert domain=[your domain name]"; exit 1; fi
