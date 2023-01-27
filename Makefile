@@ -4,6 +4,9 @@ up:
 down:
 	docker-compose down
 
+reload:
+	docker-compose restart
+
 logs:
 	docker-compose logs -f
 
@@ -20,9 +23,9 @@ self-signed-cert:
 	mkdir -p ./letsencrypt/live/$$domain/
 	openssl req -x509 -newkey rsa:4096 \
 		-subj "/CN=$$domain" \
-    	-out ./letsencrypt/live/$$domain/fullchain.pem \
-    	-keyout ./letsencrypt/live/$$domain/privkey.pem \
-    	-days 365 \
+		-out ./letsencrypt/live/$$domain/fullchain.pem \
+		-keyout ./letsencrypt/live/$$domain/privkey.pem \
+		-days 365 \
 		-nodes
 
 clean: down
