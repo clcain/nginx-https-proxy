@@ -24,6 +24,7 @@ self-signed-cert:
     	-keyout ./letsencrypt/live/$$domain/privkey.pem \
     	-days 365 \
 		-nodes
-clean:
+
+clean: down
 	@if [ "$$USER" != "root" ]; then echo "Error: Must be run as root."; exit 1; fi
 	rm -rf ./letsencrypt/
