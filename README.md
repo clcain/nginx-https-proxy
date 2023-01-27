@@ -30,4 +30,4 @@ make self-signed-cert domain=[your domain name]
 
 Ensure that you have followed the instructions above for each domain that you want to secure with HTTPS before continuing.
 
-For each site that you want to secure with HTTPS, copy the [example configuration file](sites-enabled/.example.com.conf) from `sites-enabled` to a new file in the same directory. Name the file to match your domain name. Then edit the configuration to match d local port number. Then, run `make up`.
+For each site that you want to secure with HTTPS, copy the [example configuration file](sites-enabled/.example.com.conf) from `sites-enabled` to a new file in the same directory. Name the file to match your domain name. Then edit the configuration to match d local port number. Then, run `make reload`.
