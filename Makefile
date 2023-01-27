@@ -4,6 +4,9 @@ up:
 down:
 	docker-compose down
 
+logs:
+	docker-compose logs -f
+
 shell:
 	docker exec -ti nginx-https-proxy-nginx-1 bash
 
