@@ -1,10 +1,10 @@
 version: '2'
 
 services:
-  app:
+  nginx:
     build: ./nginx
     restart: always
-    network_mode: "host"
+    network_mode: host
     volumes:
       - ./sites-enabled:/etc/nginx/sites-enabled
       - ./letsencrypt:/etc/letsencrypt
