@@ -1,6 +1,6 @@
-FROM debian:stretch-slim
+FROM debian:buster-slim
 
-RUN apt-get update && apt-get install -y cron curl nginx python-certbot-nginx && apt-get clean
+RUN apt update && apt install -y cron curl nginx python-certbot-nginx && apt-get clean
 
 RUN mkdir /var/www/letsencrypt
 
