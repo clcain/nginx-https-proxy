@@ -2,7 +2,7 @@
 
 Easily secure multiple local HTTP applications with HTTPS using this nginx configuration that can be deployed using Docker. Supports automatic certificate generation from Let's Encrypt.
 
-Must have Docker, docker-compose, and GPU Make installed to use.
+Must have Docker, docker-compose, and Make installed to use.
 
 ## Installation
 
