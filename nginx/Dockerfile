@@ -1,6 +1,6 @@
-FROM debian:buster-slim
+FROM debian:bookworm-slim
 
-RUN apt update && apt install -y cron curl nginx python-certbot-nginx && apt-get clean
+RUN apt update && apt install -y cron curl nginx python3-certbot-nginx && apt-get clean
 
 RUN mkdir /var/www/letsencrypt
 
