@@ -4,7 +4,7 @@ up:
 down:
 	docker-compose down
 
-reload:
+restart:
 	docker-compose restart
 
 logs:
